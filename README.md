@@ -2,6 +2,8 @@
 
 This repo contains 3 practical examples about caching. Each example is placed in a separate folder and separate solution. 
 
+---
+
 ## 1. Cache Database Dependency Example
 
 [Caching.DbDependency.sln](src/Caching.DbDependency/Caching.DbDependency.sln)
@@ -13,7 +15,7 @@ Implementation Details:
 * Entity Framework Core
 * Razor Pages
 
----
+
 
 ## 2. Hybrid Cache Example
 
