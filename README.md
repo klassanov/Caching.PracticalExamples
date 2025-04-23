@@ -2,11 +2,11 @@
 
 This repo contains 3 practical examples about caching. Each example is placed in a separate folder and separate solution. 
 
----
+
 
 ## 1. Cache Database Dependency Example
 
-[Caching.DbDependency.sln](src/Caching.DbDependency/Caching.DbDependency.sln)
+[Caching.DbDependency Example Folder](src/Caching.DbDependency/)
 
 Implementation Details:
 
@@ -19,7 +19,7 @@ Implementation Details:
 
 ## 2. Hybrid Cache Example
 
-[Caching.Hybrid.sln](src/Caching.Hybrid/Caching.Hybrid.sln)
+[Caching.Hybrid Example Folder](src/Caching.Hybrid/)
 
 Implementation Details:
 
