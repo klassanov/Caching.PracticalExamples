@@ -1,6 +1,8 @@
 # Caching.Demo
 
-This repo contains 3 practical examples about caching. Each example is placed in a separate folder and separate solution. 
+This repo contains 3 practical examples regarding caching. Each example is placed in a separate folder and in a separate solution.
+
+
 
 
 
@@ -14,6 +16,8 @@ Implementation Details:
 * Postgres DB in Docker container
 * Entity Framework Core
 * Razor Pages
+
+
 
 
 
