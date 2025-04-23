@@ -1,0 +1,62 @@
+I. DOCKER COMMANDS
+--------------------------------------------------------------
+	docker run --name postgres-container-demo -p 5432:5432 -e POSTGRES_PASSWORD=admin123 -d postgres`
+	docker run -p 8081:80 -e PGADMIN_DEFAULT_EMAIL=admin@example.com -e PGADMIN_DEFAULT_PASSWORD=admin123 --name pgadmin -d dpage/pgadmin4
+    docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+
+
+II. POSTGRES DATABASE SETUP
+-------------------------------------------------------------
+
+1. Create a Trigger Function named NotifyOnProductChange
+--------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION public."NotifyOnProductChange"()
+  RETURNS trigger
+  LANGUAGE 'plpgsql'
+AS $BODY$ 
+DECLARE 
+  data JSON;
+  notification JSON;
+BEGIN
+  IF (TG_OP = 'DELETE') THEN
+    data = row_to_json(OLD);
+  ELSE
+    data = row_to_json(NEW);
+  END IF;
+
+ 
+  notification = json_build_object(
+            'table',TG_TABLE_NAME,
+            'action', TG_OP, -- can have value of INSERT, UPDATE, DELETE
+            'data', data);  
+            
+    
+     PERFORM pg_notify('product_changed', notification::TEXT);
+  RETURN NEW;
+END
+$BODY$;
+---------------------------------------------------------------------------------
+
+
+
+2. Create a Trigger named OnDataChange on the Products table
+--------------------------------------------------------------
+CREATE TRIGGER "OnDataChange"
+  AFTER INSERT OR DELETE OR UPDATE 
+  ON public."Products"
+  FOR EACH ROW
+  EXECUTE PROCEDURE public."NotifyOnProductChange"();
+---------------------------------------------------------------------------------
+
+
+3. Insert a new Product into Products table to trigger cache invalidation
+-------------------------------------------------------------------------
+
+INSERT INTO public."Products" (
+    "Id", "Name", "Price"
+) VALUES (
+    '6f2c0a9f-07ab-4cc7-a6b5-06e9613eb23b', 
+    'TestProduct', 
+    50
+);
