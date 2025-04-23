@@ -1,6 +1,6 @@
 I. DOCKER COMMANDS
 --------------------------------------------------------------
-	docker run --name postgres-container-demo -p 5432:5432 -e POSTGRES_PASSWORD=admin123 -d postgres`
+	docker run --name postgres-container-demo -p 5432:5432 -e POSTGRES_PASSWORD=admin123 -d postgres
 	docker run -p 8081:80 -e PGADMIN_DEFAULT_EMAIL=admin@example.com -e PGADMIN_DEFAULT_PASSWORD=admin123 --name pgadmin -d dpage/pgadmin4
     docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
 
