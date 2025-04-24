@@ -1,7 +1,14 @@
+using Microsoft.Extensions.FileProviders;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddSingleton<IFileProvider, PhysicalFileProvider>(sp =>
+{
+    return new PhysicalFileProvider(@"C:\tmp");
+});
 
 var app = builder.Build();
 
