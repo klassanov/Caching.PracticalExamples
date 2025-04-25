@@ -18,7 +18,7 @@
     <PackageReference Include="OpenTelemetry.Instrumentation.GrpcNetClient" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Http" />
     <PackageReference Include="OpenTelemetry.Instrumentation.Runtime" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.StackExchangeRedis" />
+    <!--<PackageReference Include="OpenTelemetry.Instrumentation.StackExchangeRedis" />-->
   </ItemGroup>
 
 </Project>

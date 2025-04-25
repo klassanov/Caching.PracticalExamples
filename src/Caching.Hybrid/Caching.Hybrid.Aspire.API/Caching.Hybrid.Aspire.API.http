@@ -1,4 +1,4 @@
-@Caching.Hybrid.Demo.WebAPI_HostAddress = https://localhost:61165
+@Caching.Hybrid.Demo.WebAPI_HostAddress = https://localhost:7112
 
 GET {{Caching.Hybrid.Demo.WebAPI_HostAddress}}/products/
 Accept: application/json

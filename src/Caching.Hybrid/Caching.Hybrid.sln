@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Hybrid.Aspire.Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Hybrid.Aspire.AppHost", "Caching.Hybrid.Aspire\Caching.Hybrid.Aspire.AppHost\Caching.Hybrid.Aspire.AppHost.csproj", "{D545B363-8DC9-0123-CE58-2B32B385A8C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Hybrid.Aspire.Shared", "Caching.Hybrid.Aspire.Shared\Caching.Hybrid.Aspire.Shared.csproj", "{D6FF8733-0270-41B7-8BCB-904AF1B658A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{D545B363-8DC9-0123-CE58-2B32B385A8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D545B363-8DC9-0123-CE58-2B32B385A8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D545B363-8DC9-0123-CE58-2B32B385A8C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6FF8733-0270-41B7-8BCB-904AF1B658A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6FF8733-0270-41B7-8BCB-904AF1B658A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6FF8733-0270-41B7-8BCB-904AF1B658A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6FF8733-0270-41B7-8BCB-904AF1B658A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

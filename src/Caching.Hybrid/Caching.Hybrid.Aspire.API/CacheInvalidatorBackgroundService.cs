@@ -1,5 +1,5 @@
-﻿using StackExchange.Redis;
-using Microsoft.Extensions.Caching.Hybrid;
+﻿using Caching.Hybrid.Aspire.Shared;
+using StackExchange.Redis;
 using HybridCache = Microsoft.Extensions.Caching.Hybrid.HybridCache;
 
 namespace Caching.Hybrid.Aspire.API

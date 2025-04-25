@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Caching.Hybrid.Aspire.API\Caching.Hybrid.Aspire.API.csproj" />
+    <ProjectReference Include="..\..\Caching.Hybrid.Aspire.Shared\Caching.Hybrid.Aspire.Shared.csproj" IsAspireProjectResource="false"/>
   </ItemGroup>
 
 </Project>
