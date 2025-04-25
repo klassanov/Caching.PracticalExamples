@@ -7,12 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspire.StackExchange.Redis.DistributedCaching" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
     <PackageReference Include="Microsoft.Extensions.Caching.Hybrid" />
-    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Caching.Hybrid.Aspire.Shared\Caching.Hybrid.Aspire.Shared.csproj" />
     <ProjectReference Include="..\Caching.Hybrid.Aspire\Caching.Hybrid.Aspire.ServiceDefaults\Caching.Hybrid.Aspire.ServiceDefaults.csproj" />
   </ItemGroup>
 

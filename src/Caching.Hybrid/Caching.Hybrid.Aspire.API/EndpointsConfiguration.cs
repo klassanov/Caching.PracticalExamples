@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Caching.Hybrid.Aspire.Shared;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Hybrid;
 using Microsoft.Extensions.Caching.Memory;
 using StackExchange.Redis;
@@ -23,7 +24,7 @@ namespace Caching.Hybrid.Aspire.API
                 return Results.Ok(products);
             });
 
-            app.MapGet("/localcache", async (IMemoryCache memoryCache) =>
+            app.MapGet("/localcache", (IMemoryCache memoryCache) =>
             {
                 var localCache = memoryCache as MemoryCache;
                 return Results.Ok(value: localCache!.Keys);

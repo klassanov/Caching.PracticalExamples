@@ -1,4 +1,4 @@
-﻿namespace Caching.Hybrid.Aspire.API
+﻿namespace Caching.Hybrid.Aspire.Shared
 {
     public static class Constants
     {
