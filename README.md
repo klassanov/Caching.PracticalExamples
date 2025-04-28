@@ -19,7 +19,7 @@ Implementation Details:
 
 
 
-## 2. Database Dependency Cache Example
+## 2. Database Dependency Caching Example
 
 [Caching.DbDependency Example Folder](src/Caching.DbDependency/)
 
@@ -34,7 +34,7 @@ Implementation Details:
 
 
 
-## 3. File Dependency Cache Example
+## 3. File Dependency Caching Example
 
 [Caching.FileDependency Example Folder](src/Caching.FileDependency/)
 
