@@ -1,6 +1,11 @@
 using Caching.Hybrid.Aspire.Shared;
+using Microsoft.Extensions.Configuration;
 
 var builder = DistributedApplication.CreateBuilder(args);
+
+
+var apiConfiguration = builder.Configuration.GetSection(nameof(ApiConfiguration)).Get<ApiConfiguration>();
+
 
 var redis = builder.AddRedis(name: Constants.RedisConnectionStringName, port: 6372)
                   .WithImage("redis")
@@ -12,8 +17,9 @@ var redis = builder.AddRedis(name: Constants.RedisConnectionStringName, port: 63
                              .WithHostPort(8001);
                   });
 
-builder.AddProject<Projects.Caching_Hybrid_Aspire_API>("caching-demo-api")
-      .WithReference(redis)
-      .WithReplicas(2);  
+builder.AddProject<Projects.Caching_Hybrid_Aspire_API>("caching-demo-api", launchProfileName: "https")
+       .WithReference(redis)
+       .WaitFor(redis)
+       .WithReplicas(apiConfiguration!.NumReplicas);
 
 builder.Build().Run();

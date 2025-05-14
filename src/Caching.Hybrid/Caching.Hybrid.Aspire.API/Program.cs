@@ -5,6 +5,8 @@ using Microsoft.Extensions.Caching.Hybrid;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var apiConfiguration = builder.Configuration.GetSection(nameof(ApiConfiguration)).Get<ApiConfiguration>();
+
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
@@ -18,7 +20,11 @@ builder.Services.AddHybridCache(options =>
     };
 });
 
-builder.Services.AddHostedService<CacheInvalidatorBackgroundService>();
+if (apiConfiguration!.RegisterCacheInvalidatorService)
+{
+    builder.Services.AddHostedService<CacheInvalidatorBackgroundService>();
+}
+
 
 builder.AddServiceDefaults();
 

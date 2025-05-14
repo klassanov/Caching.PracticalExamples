@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/launchsettings.json",
-  "profiles": {
-    "https": {
+  "profiles": {    
+    "https-one-api-replica": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -10,7 +10,37 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DOTNET_ENVIRONMENT": "Development",
         "DOTNET_DASHBOARD_OTLP_ENDPOINT_URL": "https://localhost:21266",
-        "DOTNET_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22198"
+        "DOTNET_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22198",
+        "ApiConfiguration__NumReplicas": "1",
+        "ApiConfiguration__RegisterCacheInvalidatorService": "false"
+      }
+    },
+    "https-two-api-replicas": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:17271;http://localhost:15256",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DOTNET_ENVIRONMENT": "Development",
+        "DOTNET_DASHBOARD_OTLP_ENDPOINT_URL": "https://localhost:21266",
+        "DOTNET_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22198",
+        "ApiConfiguration__NumReplicas": "2",
+        "ApiConfiguration__RegisterCacheInvalidatorService": "false"
+      }
+    },
+    "https-two-api-replicas-invalidator-service": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:17271;http://localhost:15256",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DOTNET_ENVIRONMENT": "Development",
+        "DOTNET_DASHBOARD_OTLP_ENDPOINT_URL": "https://localhost:21266",
+        "DOTNET_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22198",
+        "ApiConfiguration__NumReplicas": "2",
+        "ApiConfiguration__RegisterCacheInvalidatorService": "true"
       }
     },
     "http": {
