@@ -7,7 +7,6 @@ namespace Caching.DbDependency.Web.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
         private readonly IProductsManager productsManager;
 
         [BindProperty]
