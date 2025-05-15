@@ -14,7 +14,6 @@ namespace Caching.DbDependency.Web.Pages
 
         public IndexModel(ILogger<IndexModel> logger, IProductsManager productsRepository)
         {
-            _logger = logger;
             productsManager = productsRepository;
         }
 
